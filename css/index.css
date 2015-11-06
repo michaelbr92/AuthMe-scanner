@@ -22,7 +22,7 @@ body {
 #status{
 	position: absolute;
 	bottom: 10%;
-	font-size: 1000%;
+	font-size: 20vh;
 	width: 100%;
 	text-align: center;
 }
