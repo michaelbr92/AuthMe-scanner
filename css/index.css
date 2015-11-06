@@ -13,7 +13,6 @@ body {
     padding:0px;
 	align-items: center;
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 100%);
-	background: blue;
 }
 
 /* Portrait layout (default) */
@@ -45,7 +44,7 @@ body {
 }
 
 #status.grant:before {
-	color: green;
+	color: darkgreen;
     content: "\f05d";
 }
 #status.deny:before {
