@@ -32,6 +32,7 @@ var app = {
 			response = isInService()
 			console.log(response)
 			if (response.status == 0 && !result.cancelled){
+				$("#avatar-img").css('background-image','url(' + response.img + ')');
 				$("#status").removeClass("deny").addClass("grant");
 			}else{
 				$("#status").removeClass("grant").addClass("deny");
