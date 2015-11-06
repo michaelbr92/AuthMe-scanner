@@ -27,14 +27,14 @@ var app = {
     scan: function() {
         console.log('scanning');
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-        scanner.scan( function (result) { 
-			alert(result.text);
+        scanner.scan( function (result) {
 			response = isInService()
 			console.log(response)
 			if (response.status == 0 && !result.cancelled){
 				$("#avatar-img").css('background-image','url(' + response.img + ')');
 				$("#status").removeClass("deny").addClass("grant");
 			}else{
+				$("#avatar-img")..removeAttr('background-image');
 				$("#status").removeClass("grant").addClass("deny");
 			}
 			}, function (error) { 
