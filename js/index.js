@@ -1,8 +1,12 @@
+
+function isInService(place_id, client_id){
+	return {status:1, img:'./img/avatar.png'}
+}
+
 var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
-		this.scan();
     },
     // Bind Event Listeners
     //
@@ -22,16 +26,21 @@ var app = {
     },
     scan: function() {
         console.log('scanning');
-        
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-
         scanner.scan( function (result) { 
-
-            alert(result.text);
-
-        }, function (error) { 
-            console.log("Scanning failed: ", error); 
-        } );
+			alert(result.text);
+			response = isInService()
+			console.log(response)
+			if (response.status == 0 && !result.cancelled){
+				$("#status").removeClass("deny").addClass("grant");
+			}else{
+				$("#status").removeClass("grant").addClass("deny");
+			}
+			}, function (error) { 
+				console.log("Scanning failed: ", error);
+				$("#status").removeClass("grant").addClass("deny");
+			} 
+		);
     }
 
 };
