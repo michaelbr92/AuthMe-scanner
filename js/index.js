@@ -28,7 +28,7 @@ var app = {
         console.log('scanning');
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
         scanner.scan( function (result) { 
-			alert(result.text, result.cancelled);
+			alert(result.text + " , " + result.cancelled);
 			response = isInService()
 			console.log(response)
 			if (response.status == 0 && !result.cancelled){
