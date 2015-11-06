@@ -34,7 +34,7 @@ var app = {
 				$("#avatar-img").css('background-image','url(' + response.img + ')');
 				$("#status").removeClass("deny").addClass("grant");
 			}else{
-				$("#avatar-img")..removeAttr('background-image');
+				$("#avatar-img").removeAttr('background-image');
 				$("#status").removeClass("grant").addClass("deny");
 			}
 			}, function (error) { 
