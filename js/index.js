@@ -25,8 +25,9 @@ var app = {
 		
     },
     scan: function() {
-        console.log('scanning');
+        console.log('scanning');		
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+		
         scanner.scan( function (result) {
 			response = isInService()
 			console.log(response)
@@ -34,11 +35,11 @@ var app = {
 				$("#avatar-img").css('background-image','url(' + response.img + ')');
 				$("#status").removeClass("deny").addClass("grant");
 			}else{
-				$("#avatar-img").removeAttr('background-image');
+				$("#avatar-img").css('background-image','url()');
 				$("#status").removeClass("grant").addClass("deny");
 			}
 			}, function (error) { 
-				console.log("Scanning failed: ", error);
+				$("#avatar-img").css('background-image','url()');
 				$("#status").removeClass("grant").addClass("deny");
 			} 
 		);
