@@ -1,6 +1,6 @@
 
 function isInService(place_id, client_id){
-	return {status:1, img:'./img/avatar.png'}
+	return {status:0, img:'./img/avatar.png'}
 }
 
 var app = {
@@ -28,7 +28,7 @@ var app = {
         console.log('scanning');
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
         scanner.scan( function (result) { 
-			alert(result.text + " , " + result.cancelled);
+			alert(result.text);
 			response = isInService()
 			console.log(response)
 			if (response.status == 0 && !result.cancelled){
